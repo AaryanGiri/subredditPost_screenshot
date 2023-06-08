@@ -21,7 +21,7 @@ div_main_elements = div_element.find_elements(By.XPATH, "//div[contains(@class, 
 # integer = int(input("How many post: "))
 # requirements = div_main_elements[:integer]
 
-# Generate a random number for screenshot names
+# Generate a random number for screenshot names as it will prevent overwriting files with the same name when the program is executed multiple times.
 j = random.randrange(100000, 1000000)
 for i in div_main_elements:
     # Take a screenshot of the div element
