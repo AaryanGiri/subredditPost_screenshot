@@ -12,15 +12,19 @@ driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 driver.get(url)
 
+# Find the parent container element that contains the div elements
 div_element = driver.find_element(By.XPATH, "//div[contains(@class, '_31N0dvxfpsO6Ur5AKx4O5d')]")
 
+# Find all the div elements within the container
 div_main_elements = div_element.find_elements(By.XPATH, "//div[contains(@class, '_1oQyIsiPHYt6nx7VOmd1sz')]")
 
 # integer = int(input("How many post: "))
 # requirements = div_main_elements[:integer]
 
+# Generate a random number for screenshot names
 j = random.randrange(100000, 1000000)
 for i in div_main_elements:
+    # Take a screenshot of the div element
     i.screenshot(f"ss{j}.png")
     j += 1
 
